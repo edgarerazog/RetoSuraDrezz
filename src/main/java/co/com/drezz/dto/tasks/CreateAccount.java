@@ -20,6 +20,7 @@ public class CreateAccount implements Task {
 
     @Override
     public <T extends Actor> void performAs(T theActor) {
+        theActor.attemptsTo(Click.on(Createpage.CHECKBUTTON_SELECCIONE_TITULO));
         theActor.attemptsTo(Click.on(Createpage.sign_in), SendKeys.of("edgarpruebas@hotmail.com").into(Createpage.create_account),Click.on(Createpage.clic_create_account),Click.on(Createpage.day_happybirthday),Click.on(Createpage.day_happybirthday),SendKeys.of("2").into(Createpage.day_happybirthday),Click.on(Createpage.day_month),Click.on(Createpage.day_month),SendKeys.of("April").into(Createpage.day_month),Click.on(Createpage.day_year),Click.on(Createpage.day_year),SendKeys.of("1986").into(Createpage.day_year));
         theActor.attemptsTo(Enter.theValue(faker.name().firstName()).into(INPUT_NOMBRES));
         theActor.attemptsTo(Enter.theValue(faker.name().lastName()).into(INPUT_APELLIDOS));

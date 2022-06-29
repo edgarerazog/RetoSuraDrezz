@@ -15,7 +15,7 @@ public class ValidarTextoCrearCuenta implements Question {
     public Object answeredBy(Actor actor) {
         actor.attemptsTo(WaitUntil.the(TEXT_INFORMACION_PERSONAL, WebElementStateMatchers.containsText(Constants.TEXTO_PAG_REGISTRO))
                 .forNoMoreThan(Constants.INTERMEDIATE).seconds());
-        return null;
+        return true;
     }
     public static ValidarTextoCrearCuenta validarTextoCrearCuenta(){
         return  new ValidarTextoCrearCuenta();

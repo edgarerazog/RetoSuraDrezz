@@ -11,8 +11,10 @@ public class Constants {
     public static final int INTERMEDIATE = 10;
 
     /** TEXTO ESPERADOS A VALIDAR */
-    public static final String TEXTO_PAG_REGISTRO = "YOUR PERSONAL INFORMATION";
+    public static final String TEXTO_PAG_REGISTRO = "CREATE AN ACCOUNT";
 
-
+    /** FORMULARIO DATOS PERSONALES */
+    public static final int DATO_MR = 1;
+    public static final int DATO_MRS = 2;
 
 }

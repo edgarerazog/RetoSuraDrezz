@@ -1,6 +1,7 @@
 package co.com.drezz.dto.userinterface;
 
 import co.com.drezz.dto.util.Constants;
+import co.com.drezz.dto.util.DateUtils;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
@@ -8,10 +9,12 @@ import org.openqa.selenium.By;
 public class Createpage extends PageObject {
 
     public static final Target TEXT_INFORMACION_PERSONAL = Target.the("Valida que este en el formulario para crear la cuenta")
-            .located(By.cssSelector(".account_creation:nth-child(1) > .page-subheading"));
+            .located(By.xpath("//h1[text()='Create an account']"));
     public static final Target sign_in = Target.the("Email's Name")
             .located(By.xpath("//*[@id='header']/div[2]/div/div/nav/div[1]/a"));
-    public static final Target INPUT_NOMBRES = Target.the("" + Constants.EL_USUARIO +" "+ Constants.MR_ROBOT + "  debera ingresar sus nombres completos")
+    public static final Target CHECKBUTTON_SELECCIONE_TITULO = Target.the("" + Constants.EL_USUARIO +" "+ Constants.MR_ROBOT + "  debera escoger el titulo de acuerdo a su tipo de genero o como el se indentifique")
+         .located(By.xpath("//input[@name='id_gender']" + DateUtils.seleccionarTitulo() + "']"));
+       public static final Target INPUT_NOMBRES = Target.the("" + Constants.EL_USUARIO +" "+ Constants.MR_ROBOT + "  debera ingresar sus nombres completos")
             .located(By.id("customer_firstname"));
     public static final Target INPUT_APELLIDOS = Target.the("" + Constants.EL_USUARIO +" "+ Constants.MR_ROBOT + "  debera ingresar sus apellidos completos")
             .located(By.id("customer_lastname"));
